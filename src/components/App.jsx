@@ -45,28 +45,28 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 //   );
 // }
 
-export function App() {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
-  const isLoading = useSelector(getLoading);
-  const error = useSelector(getError);
-  const dispatch = useDispatch();
+export const App = () => {
+  // const contacts = useSelector(getContacts);
+  // const filter = useSelector(getFilter);
+  // const isLoading = useSelector(getLoading);
+  // const error = useSelector(getError);
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
 
-  const handleSubmit = newContact => {
-    const dublicate = contacts.find(({ name }) => name.toLowerCase().includes(newContact.name.toLowerCase()));
-    if (dublicate) {
-      alert(`${newContact} is already in contacts`);
-      return;
-    }
-    dispatch(addContact(newContact));
-  };
-  const changeFilter = e => dispatch(addFilter(e.currentTarget.value));
-  const delContact = id => dispatch(deleteContact(id));
-  const randerContacts = () => contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+  // const handleSubmit = newContact => {
+  //   const dublicate = contacts.find(({ name }) => name.toLowerCase().includes(newContact.name.toLowerCase()));
+  //   if (dublicate) {
+  //     alert(`${newContact} is already in contacts`);
+  //     return;
+  //   }
+  //   dispatch(addContact(newContact));
+  // };
+  // const changeFilter = e => dispatch(addFilter(e.currentTarget.value));
+  // const delContact = id => dispatch(deleteContact(id));
+  // const randerContacts = () => contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
   return (
     <Container>
@@ -80,4 +80,4 @@ export function App() {
       </Routes>
     </Container>
   );
-}
+};
