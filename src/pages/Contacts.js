@@ -8,7 +8,6 @@ import { getContacts, getError, getLoading } from 'redux/contactsSlice';
 import { fetchContacts, addContact, deleteContact } from 'redux/operations';
 import { addFilter, getFilter } from 'redux/filterSlice';
 import { Loader } from 'components/Loader/Loader';
-import { Helmet } from 'react-helmet';
 
 export default function Contacts (){
   const contacts = useSelector(getContacts);
@@ -35,9 +34,6 @@ export default function Contacts (){
 
   return (
     <>
-      <Helmet>
-        <title>Your contacts</title>
-      </Helmet>
       <Container>
         {error ? (
           <p>Please try again later. The problem occurred. ${error}</p>
