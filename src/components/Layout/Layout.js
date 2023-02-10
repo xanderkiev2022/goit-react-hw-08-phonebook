@@ -17,7 +17,7 @@ export const Layout = () => {
         {isLoggedIn && <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>}
         {isLoggedIn ? (
           <Wrapper>
-            <Username>Welcome, {user.name}</Username>
+            <Username>Welcome, {user.email}</Username>
             <button type="button" onClick={() => dispatch(logOut())}> Logout </button>
           </Wrapper>
         ) : (
