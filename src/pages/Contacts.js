@@ -10,7 +10,7 @@ import { addFilter, getFilter } from 'redux/filterSlice';
 import { Loader } from 'components/Loader/Loader';
 import { Helmet } from 'react-helmet';
 
-export function Contacts() {
+export default function Contacts (){
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   const isLoading = useSelector(getLoading);
