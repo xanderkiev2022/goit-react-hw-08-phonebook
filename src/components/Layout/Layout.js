@@ -4,7 +4,7 @@ import { logOut } from 'redux/auth/operations';
 import { Outlet } from 'react-router-dom';
 // import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
-import { Header, Wrapper, Username, NavLinkStyled } from './Layout.styled';
+import { Header, Wrapper, ExtraWrapper, Username, NavLinkStyled, Button } from './Layout.styled';
 
 export const Layout = () => {
   const dispatch = useDispatch();
@@ -13,12 +13,17 @@ export const Layout = () => {
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       <Header>
-        <NavLinkStyled to="/">Home</NavLinkStyled>
-        {isLoggedIn && <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>}
+        <ExtraWrapper>
+          <NavLinkStyled to="/">Home</NavLinkStyled>
+          {isLoggedIn && <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>}
+        </ExtraWrapper>
         {isLoggedIn ? (
           <Wrapper>
             <Username>Welcome, {user.email}</Username>
-            <button type="button" onClick={() => dispatch(logOut())}> Logout </button>
+            <Button type="button" onClick={() => dispatch(logOut())}>
+ 
+              Logout
+            </Button>
           </Wrapper>
         ) : (
           <div>
