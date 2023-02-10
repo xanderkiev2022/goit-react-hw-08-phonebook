@@ -2,7 +2,7 @@ import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
 import { Header, Wrapper, Username, NavLinkStyled } from './Layout.styled';
 
