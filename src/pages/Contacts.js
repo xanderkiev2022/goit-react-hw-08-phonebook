@@ -38,21 +38,25 @@ export default function Contacts (){
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-      <div>{isLoading && 'Request in progress...'}</div>
       <Container>
         {error ? (
           <p>Please try again later. The problem occurred. ${error}</p>
         ) : (
           <>
-            {isLoading && <Loader />}
-            <TitleH1>Phonebook</TitleH1>
-            <ContactForm onSubmitData={handleSubmit} />
-            <TitleH2>Contacts</TitleH2>
-            <Filter value={filter} changeFilter={changeFilter} />
-            {contacts.length ? (
-              <ContactList contacts={randerContacts()} deleteContact={delContact} />
+            {isLoading ? (
+              <Loader />
             ) : (
-              <p>Oh, dear, you have no friends:( Get out of your chair and do something with your life ;)</p>
+              <>
+                <TitleH1>Phonebook</TitleH1>
+                <ContactForm onSubmitData={handleSubmit} />
+                <TitleH2>Contacts</TitleH2>
+                <Filter value={filter} changeFilter={changeFilter} />
+                {contacts.length ? (
+                  <ContactList contacts={randerContacts()} deleteContact={delContact} />
+                ) : (
+                  <p>Oh, dear, you have no friends:( Get out of your chair and do something with your life ;)</p>
+                )}
+              </>
             )}
           </>
         )}

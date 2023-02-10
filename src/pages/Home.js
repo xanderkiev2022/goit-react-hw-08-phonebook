@@ -1,6 +1,6 @@
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 50px)',
+    minHeight: 'calc(100vh - 300px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
