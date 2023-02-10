@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
+import { Header, Wrapper, Username, NavLinkStyled } from './Layout.styled';
 
 export const Layout = () => {
   const dispatch = useDispatch();
@@ -12,21 +12,21 @@ export const Layout = () => {
 
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
-      <header>
-        <NavLink to="/">Home</NavLink>
-        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      <Header>
+        <NavLinkStyled to="/">Home</NavLinkStyled>
+        {isLoggedIn && <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>}
         {isLoggedIn ? (
-          <div>
-            <p>Welcome, {user.name}</p>
+          <Wrapper>
+            <Username>Welcome, {user.name}</Username>
             <button type="button" onClick={() => dispatch(logOut())}> Logout </button>
-          </div>
+          </Wrapper>
         ) : (
           <div>
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/login">Log In</NavLink>
+            <NavLinkStyled to="/register">Register</NavLinkStyled>
+            <NavLinkStyled to="/login">Log In</NavLinkStyled>
           </div>
         )}
-      </header>
+      </Header>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
