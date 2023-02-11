@@ -4,9 +4,9 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getError, getLoading } from 'redux/contactsSlice';
-import { fetchContacts, addContact, deleteContact } from 'redux/operations';
-import { addFilter, getFilter } from 'redux/filterSlice';
+import { getContacts, getError, getLoading } from 'redux/contacts/contactsSlice';
+import { fetchContacts, addContact, deleteContact } from 'redux/contacts/operations';
+import { addFilter, getFilter } from 'redux/contacts/filterSlice';
 import { Loader } from 'components/Loader/Loader';
 
 export default function Contacts (){

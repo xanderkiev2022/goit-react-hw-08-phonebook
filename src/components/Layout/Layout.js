@@ -20,10 +20,7 @@ export const Layout = () => {
         {isLoggedIn ? (
           <Wrapper>
             <Username>Welcome, {user.email}</Username>
-            <Button type="button" onClick={() => dispatch(logOut())}>
- 
-              Logout
-            </Button>
+            <Button type="button" onClick={() => dispatch(logOut())}> Logout </Button>
           </Wrapper>
         ) : (
           <div>

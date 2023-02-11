@@ -26,25 +26,30 @@ font-weight: 400;
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  border-radius: 4px;
+  padding: 5px 15px;
+  margin-left: 10px;
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: var(--secondary-text-color);
+  transition: background-color var(--animation-timing-function);
+  font-size: px;
   &.active {
-    color: #e84a5f;
+    color: #fff;
+    background-color: var(--accent-color);
   }
 `;
 
 export const Button = styled.button`
-margin-left:10px;
+  margin-left: 10px;
   padding: 5px 15px;
   background-color: var(--accent-color);
   color: var(--primary-text-color);
-  border: var(--border);
   border-radius: 4px;
   font-weight: 700;
   transition: background-color var(--animation-timing-function);
+  font-size: 16px;
   &:hover,
   &:focus {
     background-color: var(--accent-color-hover);
