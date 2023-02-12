@@ -6,6 +6,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const authSlice = createSlice({
@@ -16,11 +17,13 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.error = '';
     },
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.error = '';
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
@@ -34,9 +37,16 @@ const authSlice = createSlice({
       state.user = action.payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
+      state.error = '';
     },
     [refreshUser.rejected](state) {
       state.isRefreshing = false;
+    },
+    [logIn.rejected](state, action) {
+      state.error = action.payload;
+    },
+    [register.rejected](state, action) {
+      state.error = action.payload;
     },
   },
 });
