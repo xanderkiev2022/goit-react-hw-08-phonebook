@@ -20,6 +20,6 @@ export const Advice = styled.h2`
   text-align: center;
 `;
 
-export const Accent = styled.h2`
+export const Accent = styled.span`
   color: yellow;
 `;

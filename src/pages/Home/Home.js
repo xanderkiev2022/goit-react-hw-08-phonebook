@@ -9,7 +9,8 @@ export default function Home() {
       <br />
       {!isLoggedIn && (
         <Advice>
-          *To use the test account please use the following email and password <br /> <Accent>oleksandr-koval@test.mail.com</Accent>
+          *To use the test account please use the following email and password <br />
+          <Accent>oleksandr-koval@test.mail.com</Accent>
         </Advice>
       )}
     </Container>
